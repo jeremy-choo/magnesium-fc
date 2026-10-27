@@ -8,7 +8,7 @@
 <meta property="og:title" content="Magnesium FC">
 <meta property="og:description" content="More than a club. A community of teammates on and off the pitch.">
 <meta property="og:image" content="img/team-red.jpg">
-<link rel="icon" href="img/logo.jpg">
+<link rel="icon" type="image/png" href="img/logo.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600&display=swap">
 <style>
 /* Layout: left-aligned scroll. Kit-stripe band as divider; photo-led hero; story as a real timeline of how the club grew. */
@@ -30,7 +30,10 @@ img{display:block;max-width:100%;height:auto}
 .stripes{height:18px;background:repeating-linear-gradient(90deg,var(--red) 0 36px,var(--stripe) 36px 72px)}
 nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px}
 .brand{display:inline-flex;align-items:center;gap:12px;font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
-.brand img{width:52px;height:52px;border-radius:50%}
+.brand img{width:auto;height:56px;background:#fff;border-radius:6px;padding:2px}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-link{font-weight:600;text-decoration:none}
+.nav-link:hover{color:var(--red)}
 .btn{display:inline-block;background:var(--red);color:var(--red-fg);font-weight:600;text-decoration:none;padding:14px 24px;border-radius:2px;letter-spacing:.02em}
 .btn:hover{filter:brightness(1.1)}
 .btn.ghost{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 2px var(--fg)}
@@ -86,8 +89,11 @@ footer p{margin:0}
 <div class="stripes"></div>
 <header class="wrap">
   <nav>
-    <a class="brand" href="#top"><img src="img/logo.jpg" width="150" height="150" alt="">Magnesium FC</a>
-    <a class="btn" href="#join">Come play</a>
+    <a class="brand" href="#top"><img src="img/logo.png" width="700" height="562" alt="Magnesium FC badge">Magnesium FC</a>
+    <div class="nav-right">
+      <a class="nav-link" href="https://www.instagram.com/magnesium_fc" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn" href="#join">Come play</a>
+    </div>
   </nav>
 </header>
 
@@ -99,7 +105,7 @@ footer p{margin:0}
       <p class="lede">Magnesium is a community of teammates on and off the pitch. We're serious but not too serious, because it's more about the community than the trophies.</p>
       <div class="ctas">
         <a class="btn" href="#join">Looking for a team?</a>
-        <a class="btn ghost" href="#story">Our story</a>
+        <a class="btn ghost" href="https://www.instagram.com/magnesium_fc" target="_blank" rel="noopener">Follow @magnesium_fc</a>
       </div>
     </div>
     <figure>
