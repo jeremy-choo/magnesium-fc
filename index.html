@@ -80,6 +80,28 @@ p{margin:0 0 1em;max-width:36em}
 .js .feed.in .tile{animation:pop .7s cubic-bezier(.2,.9,.3,1.2) forwards;animation-delay:calc(var(--i)*70ms)}
 @keyframes pop{from{opacity:0;translate:0 40px;scale:.92}to{opacity:1;translate:0 0;scale:1}}
 @media(prefers-reduced-motion:reduce){.track{animation:none}.marquee{overflow-x:auto}.js .feed .wrap>*,.js .tile{opacity:1;animation:none!important}}
+.hint{color:var(--muted);font-size:15px}
+.court{border:2px solid var(--fg);background:var(--panel)}
+.hud{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 16px;background:var(--fg);color:var(--bg);font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+.hud b{font-family:var(--display);font-weight:900;font-size:28px;letter-spacing:.04em;line-height:1}
+.stage{position:relative}
+#tennis{display:block;width:100%;aspect-ratio:2/1;touch-action:none;outline-offset:-4px}
+.overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px;text-align:center;background:rgba(14,14,14,.72);color:#f2f2ef}
+.overlay[hidden]{display:none}
+.overlay h3{font-family:var(--display);font-weight:900;font-size:clamp(28px,6vw,44px);line-height:1;text-transform:uppercase;margin:0}
+.overlay p{margin:0;max-width:30em;font-size:15px}
+.picks{display:flex;gap:16px;margin-top:4px}
+.picks button{width:88px;height:88px;padding:0;border:3px solid #f2f2ef;border-radius:50%;overflow:hidden;background:none;cursor:pointer;transition:transform .2s}
+.picks button:hover{transform:scale(1.08);border-color:var(--red)}
+.picks img{width:100%;height:100%;object-fit:cover}
+.overlay .btn{border:0;font:inherit;font-weight:600;cursor:pointer}
+.overlay .btn.ghost{color:#f2f2ef;box-shadow:inset 0 0 0 2px #f2f2ef}
+.ctl{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;flex-wrap:wrap}
+.touches{font-size:14px;color:var(--muted)}
+.pad{display:flex;gap:8px}
+.pad button{min-width:64px;height:52px;border:2px solid var(--fg);background:var(--bg);color:var(--fg);font:inherit;font-weight:600;font-size:18px;cursor:pointer;touch-action:none;user-select:none}
+.pad button:active{background:var(--fg);color:var(--bg)}
+.pad .kick{background:var(--red);border-color:var(--red);color:#fff;padding-inline:28px}
 .join{background:var(--panel);border-top:6px solid var(--red)}
 .links{display:grid;gap:12px;margin-top:28px}
 .links a.row{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:18px 20px;background:var(--bg);border:1px solid var(--line);text-decoration:none;font-weight:600}
@@ -159,6 +181,43 @@ footer p{margin:0}
     <div class="wrap"><a class="btn ghost" href="https://www.instagram.com/magnesium_fc" target="_blank" rel="noopener">See everything on Instagram</a></div>
   </section>
 
+  <section class="wrap game" id="play" aria-labelledby="game-h">
+    <div class="two">
+      <div>
+        <p class="eyebrow">Take five</p>
+        <h2 id="game-h">Soccer tennis.</h2>
+      </div>
+      <div>
+        <p>Magnesium v Kersh FC. Three touches a side, one bounce, over the net. First to 7 wins.</p>
+        <p class="hint">Keyboard: arrow keys to move, space to kick. On a phone, use the buttons.</p>
+      </div>
+    </div>
+    <div class="court">
+      <div class="hud"><span>You</span><b id="tt-score">0 : 0</b><span>Kersh FC</span></div>
+      <div class="stage">
+        <canvas id="tennis" tabindex="0" aria-label="Soccer tennis game"></canvas>
+        <div class="overlay" id="tt-overlay">
+          <h3 id="tt-title">Pick your player</h3>
+          <p id="tt-msg">Choose who you're playing as.</p>
+          <div class="picks" id="tt-picks">
+            <button type="button" data-head="a" aria-label="Play as the first player"><img src="img/head-a.jpg" width="104" height="104" alt=""></button>
+            <button type="button" data-head="b" aria-label="Play as the second player"><img src="img/head-b.jpg" width="112" height="112" alt=""></button>
+          </div>
+          <button type="button" class="btn" id="tt-again" hidden>Play again</button>
+          <a class="btn ghost" id="tt-join" href="#join" hidden>Come play for real</a>
+        </div>
+      </div>
+      <div class="ctl">
+        <span class="touches" id="tt-touches">Touches 0 of 3</span>
+        <div class="pad">
+          <button type="button" data-ctl="left" aria-label="Move left">&larr;</button>
+          <button type="button" data-ctl="right" aria-label="Move right">&rarr;</button>
+          <button type="button" class="kick" data-ctl="kick">Kick</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="wrap" style="padding-top:0">
     <p class="eyebrow">Our DNA</p>
     <p class="quote">Serious, but <em>not too serious.</em></p>
@@ -197,6 +256,7 @@ footer p{margin:0}
   <p>Magnesium Football Club · Est. 2021 · Some photos by Mark Elbourne (@markelbourneshoots)</p>
   <a href="https://www.instagram.com/magnesium_fc" target="_blank" rel="noopener">@magnesium_fc</a>
 </footer>
+<script src="game.js"></script>
 <script>
 document.documentElement.classList.add("js");
 (function(){var f=document.querySelector(".feed");if(!f)return;
