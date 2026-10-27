@@ -62,10 +62,8 @@ p{margin:0 0 1em;max-width:36em}
 .gallery figure{min-width:0}
 .gallery img{width:100%;height:100%;object-fit:cover}
 .g1{grid-column:span 3}.g2{grid-column:span 3}
-.g3{grid-column:span 2}.g4{grid-column:span 4}
 .g1 img,.g2 img{aspect-ratio:4/3}
-.g3 img{aspect-ratio:3/4}
-.g4 img{aspect-ratio:4/3}
+.g2 img{object-position:50% 20%}
 .join{background:var(--panel);border-top:6px solid var(--red)}
 .links{display:grid;gap:12px;margin-top:28px}
 .links a.row{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:18px 20px;background:var(--bg);border:1px solid var(--line);text-decoration:none;font-weight:600}
@@ -77,8 +75,7 @@ footer p{margin:0}
   .hero,.two{grid-template-columns:1fr;gap:32px}
   .path li{grid-template-columns:1fr;gap:4px}
   section{padding-block:48px}
-  .g1,.g2,.g3,.g4{grid-column:span 6}
-  .g3 img{aspect-ratio:4/5}
+  .g1,.g2{grid-column:span 6}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
@@ -137,7 +134,6 @@ footer p{margin:0}
     <div class="gallery">
       <figure class="g1"><img src="img/team-navy.jpg" width="640" height="427" loading="lazy" alt="Magnesium FC players in navy shirts posing together with a match ball in front of a goal."><figcaption>The whole crew, navy edition.</figcaption></figure>
       <figure class="g2"><img src="img/action.jpg" width="480" height="640" loading="lazy" alt="A Magnesium player in the red and black stripes dribbling the ball upfield."><figcaption>Match day on a Sunday.</figcaption></figure>
-      <figure class="g3"><img src="img/number-7.jpg" width="640" height="427" loading="lazy" alt="A player seen from behind in a red number 7 Magnesium shirt with the name CHOO."><figcaption>Our number 7.</figcaption></figure>
     </div>
   </section>
 
