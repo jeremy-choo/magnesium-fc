@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magnesium FC</title>
+<meta name="description" content="Magnesium FC is a community football club in Melbourne. Serious but not too serious. We play every Sunday in the MCSA league and we're looking for new teammates.">
+<meta property="og:title" content="Magnesium FC">
+<meta property="og:description" content="More than a club. A community of teammates on and off the pitch.">
+<meta property="og:image" content="img/team-red.jpg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: left-aligned scroll. Kit-stripe band as divider; photo-led hero; story as a real timeline of how the club grew. */
+:root{
+  --bg:#f4f4f2; --fg:#141414; --muted:#5b5b58; --line:#d6d6d2;
+  --red:#c8102e; --red-fg:#ffffff; --panel:#ffffff; --stripe:#141414;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0e0e0e;--fg:#f2f2ef;--muted:#a3a39e;--line:#2b2b2a;--red:#e5273f;--panel:#171717;--stripe:#f2f2ef;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e0e0e;--fg:#f2f2ef;--muted:#a3a39e;--line:#2b2b2a;--red:#e5273f;--panel:#171717;--stripe:#f2f2ef;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.stripes{height:18px;background:repeating-linear-gradient(90deg,var(--red) 0 36px,var(--stripe) 36px 72px)}
+nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px}
+.brand{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+.btn{display:inline-block;background:var(--red);color:var(--red-fg);font-weight:600;text-decoration:none;padding:14px 24px;border-radius:2px;letter-spacing:.02em}
+.btn:hover{filter:brightness(1.1)}
+.btn.ghost{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 2px var(--fg)}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center;padding-block:40px 64px}
+.hero>*{min-width:0}
+.eyebrow{font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin:0 0 14px}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(52px,9vw,112px);line-height:.88;text-transform:uppercase;margin:0 0 24px;text-wrap:balance}
+h1 em{font-style:normal;color:var(--red)}
+.lede{font-size:20px;max-width:30em;color:var(--muted);margin:0 0 32px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+figure{margin:0}
+figcaption{font-size:13px;color:var(--muted);padding-top:8px}
+.hero figure img{width:100%;aspect-ratio:5/4;object-fit:cover}
+section{padding-block:64px}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(36px,6vw,64px);line-height:1;text-transform:uppercase;margin:0 0 20px;text-wrap:balance}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.two>*{min-width:0}
+p{margin:0 0 1em;max-width:36em}
+.path{list-style:none;margin:0;padding:0;border-top:2px solid var(--fg)}
+.path li{display:grid;grid-template-columns:minmax(0,190px) 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--line)}
+.path b{font-family:var(--display);font-weight:800;font-size:28px;text-transform:uppercase;line-height:1.1}
+.path span{color:var(--muted)}
+.path li.now b{color:var(--red)}
+.honours{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border-top:2px solid var(--fg)}
+.honours div{padding:24px 24px 24px 0;border-bottom:1px solid var(--line)}
+.big{font-family:var(--display);font-weight:900;font-size:64px;line-height:1;margin:0}
+.honours span{color:var(--muted)}
+.quote{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,68px);line-height:1;text-transform:uppercase;margin:0;max-width:16em;text-wrap:balance}
+.quote em{font-style:normal;color:var(--red)}
+.gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.gallery figure{min-width:0}
+.gallery img{width:100%;height:100%;object-fit:cover}
+.g1{grid-column:span 3}.g2{grid-column:span 3}
+.g3{grid-column:span 2}.g4{grid-column:span 4}
+.g1 img,.g2 img{aspect-ratio:4/3}
+.g3 img{aspect-ratio:3/4}
+.g4 img{aspect-ratio:4/3}
+.join{background:var(--panel);border-top:6px solid var(--red)}
+.links{display:grid;gap:12px;margin-top:28px}
+.links a.row{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:18px 20px;background:var(--bg);border:1px solid var(--line);text-decoration:none;font-weight:600}
+.links a.row small{display:block;font-weight:400;color:var(--muted)}
+.links a.row:hover{border-color:var(--red)}
+footer{padding-block:32px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer p{margin:0}
+@media(max-width:760px){
+  .hero,.two{grid-template-columns:1fr;gap:32px}
+  .path li{grid-template-columns:1fr;gap:4px}
+  section{padding-block:48px}
+  .g1,.g2,.g3,.g4{grid-column:span 6}
+  .g3 img{aspect-ratio:4/5}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="stripes"></div>
+<header class="wrap">
+  <nav>
+    <a class="brand" href="#top">Magnesium FC</a>
+    <a class="btn" href="#join">Come play</a>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <p class="eyebrow">Melbourne · Sundays · Est. 2021</p>
+      <h1>More than <em>a club.</em></h1>
+      <p class="lede">Magnesium is a community of teammates on and off the pitch. We're serious but not too serious, because it's more about the community than the trophies.</p>
+      <div class="ctas">
+        <a class="btn" href="#join">Looking for a team?</a>
+        <a class="btn ghost" href="#story">Our story</a>
+      </div>
+    </div>
+    <figure>
+      <img src="img/team-red.jpg" width="640" height="511" alt="The Magnesium FC squad in red and black stripes, lined up in front of a goal under a blue sky.">
+    </figure>
+  </div>
+
+  <div class="stripes"></div>
+
+  <section class="wrap" id="story">
+    <div class="two">
+      <div>
+        <p class="eyebrow">Our story</p>
+        <h2>It started on a couch.</h2>
+      </div>
+      <div>
+        <p>During the Melbourne lockdowns, Magnesium FC started with just three of us playing FIFA Pro Clubs. Once we could get back outside, five-a-side futsal brought a crew together in real life, and we haven't stopped growing since.</p>
+        <p>More people wanted to play, so the club kept growing with them.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top:0">
+    <p class="eyebrow">How we grew</p>
+    <ol class="path">
+      <li><b>Pro Clubs</b><span>Three mates, a console and a lockdown.</span></li>
+      <li><b>Five-a-side futsal</b><span>The crew meets in real life. Four futsal championships follow.</span></li>
+      <li><b>Seven-a-side</b><span>More people want in. We win the 2024 Knox 7s.</span></li>
+      <li class="now"><b>Eleven-a-side</b><span>We play every Sunday in the MCSA league. This is where you come in.</span></li>
+    </ol>
+  </section>
+
+  <section class="wrap" style="padding-top:0">
+    <div class="gallery">
+      <figure class="g1"><img src="img/team-navy.jpg" width="640" height="427" loading="lazy" alt="Magnesium FC players in navy shirts posing together with a match ball in front of a goal."><figcaption>The whole crew, navy edition.</figcaption></figure>
+      <figure class="g2"><img src="img/action.jpg" width="480" height="640" loading="lazy" alt="A Magnesium player in the red and black stripes dribbling the ball upfield."><figcaption>Match day on a Sunday.</figcaption></figure>
+      <figure class="g3"><img src="img/number-7.jpg" width="640" height="427" loading="lazy" alt="A player seen from behind in a red number 7 Magnesium shirt with the name CHOO."><figcaption>Our number 7.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top:0">
+    <p class="eyebrow">Our DNA</p>
+    <p class="quote">Serious, but <em>not too serious.</em></p>
+  </section>
+
+  <section class="wrap" style="padding-top:0">
+    <p class="eyebrow">What we've won together</p>
+    <div class="honours">
+      <div><p class="big">4×</p><span>Futsal championships</span></div>
+      <div><p class="big">2024</p><span>Knox 7s winners</span></div>
+      <div><p class="big">2021</p><span>The year it all started</span></div>
+    </div>
+  </section>
+
+  <section class="join" id="join">
+    <div class="wrap">
+      <div class="two">
+        <div>
+          <p class="eyebrow">Want to be part of the next chapter?</p>
+          <h2>Shoot us a DM.</h2>
+        </div>
+        <div>
+          <p>If you or a mate are looking for a team to play with, send us a message on Instagram. Tell us where you've played and what you're after. We'll get back to you.</p>
+        </div>
+      </div>
+      <div class="links">
+        <a class="row" href="https://ig.me/m/magnesium_fc" target="_blank" rel="noopener"><span>Message us on Instagram<small>@magnesium_fc</small></span><span aria-hidden="true">→</span></a>
+        <a class="row" href="https://www.mcsafootball.org.au/team/magnesium-fc" target="_blank" rel="noopener"><span>See our fixtures and results<small>MCSA team page</small></span><span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="stripes"></div>
+<footer class="wrap">
+  <p>Magnesium Football Club · Est. 2021 · Some photos by Mark Elbourne (@markelbourneshoots)</p>
+  <a href="https://www.instagram.com/magnesium_fc" target="_blank" rel="noopener">@magnesium_fc</a>
+</footer>
+</body>
+</html>
