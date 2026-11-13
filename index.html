@@ -21,6 +21,7 @@
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0e0e0e;--fg:#f2f2ef;--muted:#a3a39e;--line:#2b2b2a;--red:#e5273f;--panel:#171717;--stripe:#f2f2ef;color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#0e0e0e;--fg:#f2f2ef;--muted:#a3a39e;--line:#2b2b2a;--red:#e5273f;--panel:#171717;--stripe:#f2f2ef;color-scheme:dark}
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.6;margin:0}
 .wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
@@ -102,6 +103,15 @@ p{margin:0 0 1em;max-width:36em}
 .pad button{min-width:64px;height:52px;border:2px solid var(--fg);background:var(--bg);color:var(--fg);font:inherit;font-weight:600;font-size:18px;cursor:pointer;touch-action:none;user-select:none}
 .pad button:active{background:var(--fg);color:var(--bg)}
 .pad .kick{background:var(--red);border-color:var(--red);color:#fff;padding-inline:28px}
+.signup{background:var(--red);color:#fff;padding-block:48px}
+.signup .eyebrow{color:#fff;opacity:.85}
+.signup h2{margin:0 0 12px}
+.signup p{color:#fff}
+.signup-in{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.signup-in>div{min-width:0;flex:1 1 320px}
+.bigbtn{flex:0 1 auto;display:inline-flex;align-items:center;justify-content:center;gap:14px;background:#141414;color:#fff;text-decoration:none;font-family:var(--display);font-weight:900;font-size:clamp(28px,5vw,44px);text-transform:uppercase;letter-spacing:.03em;padding:22px 40px;border:3px solid #fff;transition:transform .2s,background .2s,color .2s}
+.bigbtn:hover{background:#fff;color:#c8102e;transform:translateY(-3px)}
+@media(max-width:760px){.bigbtn{width:100%}}
 .join{background:var(--panel);border-top:6px solid var(--red)}
 .links{display:grid;gap:12px;margin-top:28px}
 .links a.row{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:18px 20px;background:var(--bg);border:1px solid var(--line);text-decoration:none;font-weight:600}
@@ -124,7 +134,7 @@ footer p{margin:0}
     <a class="brand" href="#top"><img src="img/logo.png" width="700" height="562" alt="Magnesium FC badge">Magnesium FC</a>
     <div class="nav-right">
       <a class="nav-link" href="https://www.instagram.com/magnesium_fc" target="_blank" rel="noopener">Instagram</a>
-      <a class="btn" href="#join">Come play</a>
+      <a class="btn" href="https://forms.gle/maRpU7dicvySBVEf7" target="_blank" rel="noopener">Join next season</a>
     </div>
   </nav>
 </header>
@@ -136,7 +146,7 @@ footer p{margin:0}
       <h1>More than <em>a club.</em></h1>
       <p class="lede">Magnesium is a community of teammates on and off the pitch. We're serious but not too serious, because it's more about the community than the trophies.</p>
       <div class="ctas">
-        <a class="btn" href="#join">Looking for a team?</a>
+        <a class="btn" href="https://forms.gle/maRpU7dicvySBVEf7" target="_blank" rel="noopener">Join next season</a>
         <a class="btn ghost" href="https://www.instagram.com/magnesium_fc" target="_blank" rel="noopener">Follow @magnesium_fc</a>
       </div>
     </div>
@@ -146,6 +156,17 @@ footer p{margin:0}
   </div>
 
   <div class="stripes"></div>
+
+  <section class="signup" aria-labelledby="signup-h">
+    <div class="wrap signup-in">
+      <div>
+        <p class="eyebrow">Registrations open</p>
+        <h2 id="signup-h">Join next season.</h2>
+        <p>Fill in the sign-up form and we'll be in touch. It takes a couple of minutes.</p>
+      </div>
+      <a class="bigbtn" href="https://forms.gle/maRpU7dicvySBVEf7" target="_blank" rel="noopener">Join next season <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </section>
 
   <section class="wrap" id="story">
     <div class="two">
@@ -244,6 +265,7 @@ footer p{margin:0}
         </div>
       </div>
       <div class="links">
+        <a class="row" href="https://forms.gle/maRpU7dicvySBVEf7" target="_blank" rel="noopener"><span>Sign up for next season<small>Google Form</small></span><span aria-hidden="true">&rarr;</span></a>
         <a class="row" href="https://ig.me/m/magnesium_fc" target="_blank" rel="noopener"><span>Message us on Instagram<small>@magnesium_fc</small></span><span aria-hidden="true">→</span></a>
         <a class="row" href="https://www.mcsafootball.org.au/team/magnesium-fc" target="_blank" rel="noopener"><span>See our fixtures and results<small>MCSA team page</small></span><span aria-hidden="true">→</span></a>
       </div>
